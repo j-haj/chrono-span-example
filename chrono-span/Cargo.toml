@@ -1,0 +1,8 @@
+[package]
+name = "chrono-span"
+version = "0.1.0"
+authors = ["Jeff Hajewski <jeff.hajewski@gmail.com>"]
+
+[dependencies]
+chrono = "0.4.0"
+error-chain = "0.11.0"
