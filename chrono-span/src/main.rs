@@ -1,20 +1,22 @@
 #[macro_use]
-extern crate chrono;
 extern crate error_chain;
+extern crate chrono;
 
+use chrono::Duration;
 use chrono::prelude::*;
 
 error_chain!{}
 
-fn sum_less_than_n(n: i32) -> i32 {
-    let mut sum = 0;
+fn sum_less_than_n(n: i64) {
+    let mut sum: i64 = 0;
     for i in 1..n {
-        sum += i;
+        sum = sum + i;
     }
-    sum
 }
 
 fn run() -> Result<()> {
+    let d = Duration::span(|| sum_less_than_n(100000));
+    println!("{:?}", d);
     Ok(())
 }
 
